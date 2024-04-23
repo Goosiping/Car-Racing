@@ -19,8 +19,11 @@ while not done:
   # obs is of shape (num_agents, 96, 96, 3)
   # reward is of shape (num_agents,)
   # done is a bool and info is not used (an empty dict).
+  action[2] = 0
+  action[1] = 1
   obs, reward, done, info = env.step(action)
   total_reward += reward
-  env.render()
+  # env.render()
 
 print("individual scores:", total_reward)
+print(env.action_space.low, env.action_space.high)
